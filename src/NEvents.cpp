@@ -1,7 +1,7 @@
 #include "NEvents.h"
 
 EventHandler::EventHandler()
-    : callback(NULL)
+    : callback((Callback *)malloc(sizeof(Callback)))
 {
 }
 
