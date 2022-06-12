@@ -12,7 +12,8 @@ void EventHandler::addCallback(EVENT_FUNCTION_PTR(function))
 
 void EventHandler::invoke(EventArgs *args)
 {
-    callback->function(args);
+    if (callback != NULL)
+        callback->function(args);
 }
 
 void EventHandler::operator+=(EVENT_FUNCTION_PTR(function))
