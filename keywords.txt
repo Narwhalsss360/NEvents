@@ -1,9 +1,9 @@
-NEvents               	LITERAL1
+NEvents             	LITERAL1
 
-EVENT_FUNCTION         	LITERAL1
-EVENT_FUNCTION_PTR     	LITERAL1
-FUNCTION_PTR           	LITERAL1
-ESR                    	LITERAL1
+EVENT_FUNCTION      	LITERAL1
+EVENT_FUNCTION_PTR  	LITERAL1
+FUNCTION_PTR        	LITERAL1
+ESR                 	LITERAL1
 
 addCallback				KEYWORD2
 invoke  				KEYWORD2
