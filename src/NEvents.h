@@ -31,5 +31,6 @@ struct MultiFunctionEventHandler : public EventHandler
 };
 
 typedef EventHandler event;
+typedef MultiFunctionEventHandler multi_event;
 
 #endif
