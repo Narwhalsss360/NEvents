@@ -46,3 +46,8 @@ void MultiFunctionEventHandler::invoke(EventArgs *args)
         callback[callbackIndex].function(args);
     }
 }
+
+void MultiFunctionEventHandler::operator+=(EVENT_FUNCTION_PTR(function))
+{
+    addCallback(function);
+}

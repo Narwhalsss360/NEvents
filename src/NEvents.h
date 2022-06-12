@@ -17,7 +17,7 @@ struct EventHandler
     EventHandler();
     virtual void addCallback(EVENT_FUNCTION_PTR());
     virtual void invoke(EventArgs *);
-    void operator+=(EVENT_FUNCTION_PTR());
+    virtual void operator+=(EVENT_FUNCTION_PTR());
 };
 
 struct MultiFunctionEventHandler : public EventHandler
@@ -26,6 +26,7 @@ struct MultiFunctionEventHandler : public EventHandler
     MultiFunctionEventHandler();
     void addCallback(EVENT_FUNCTION_PTR()) override;
     void invoke(EventArgs *) override;
+    virtual void operator+=(EVENT_FUNCTION_PTR());
 };
 
 #endif
