@@ -7,6 +7,7 @@
     #include "WProgram.h"
 #endif
 
+#include <NDefs.h>
 #include "Callback.h"
 
 struct EventHandler
@@ -15,12 +16,13 @@ struct EventHandler
     EventHandler();
     virtual void addCallback(void (*)(EventArgs *));
     virtual void invoke(EventArgs *);
-    void operator +=(void (*)(EventArgs *));
+    void operator+=(void (*)(EventArgs *));
 };
 
-struct MultiEventHandler : public EventHandler
+struct MultiFunctionEventHandler : public EventHandler
 {
-    MultiEventHandler();
+    uint8_t callbackCount;
+    MultiFunctionEventHandler();
     void addCallback(void (*)(EventArgs *)) override;
     void invoke(EventArgs *) override;
 };
