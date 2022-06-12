@@ -29,6 +29,14 @@ MultiFunctionEventHandler::MultiFunctionEventHandler()
 
 void MultiFunctionEventHandler::addCallback(EVENT_FUNCTION_PTR(function))
 {
+    if (callbackCount == ZERO)
+    {
+        callback = (Callback *)malloc(sizeof(Callback));
+        callback[callbackCount] = Callback(function);
+        callbackCount++;
+        return;
+    }
+
     Callback *temp = (Callback *)malloc(sizeof(Callback) * (callbackCount + 1));
     memmove(temp, callback, sizeof(Callback) * callbackCount);
 
