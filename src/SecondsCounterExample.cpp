@@ -28,14 +28,18 @@ void SecondsCounterClass::timerSetup()
 
 void SecondsCounterClass::tickISR()
 {
+    //Your useful code.
     seconds++;
     args.seconds = seconds;
+
+    //Calls callbacks with &args.
     onTick.invoke(&args);
     onTickMuli.invoke(&args);
 }
 
 SecondsCounterClass SecondsCounter = SecondsCounterClass();
 
+//ISR
 ISR(TIMER1_COMPA_vect)
 {
     SecondsCounter.tickISR();

@@ -12,6 +12,8 @@
 #define GET_TickEventArgs(arg) *(TickEventArgs*)arg
 #define TICK_ESR(name, args_name, defenition)  EVENT_FUNCTION(name, base_##args_name) {  TickEventArgs args_name = GET_TickEventArgs(base_##args_name); defenition }
 
+// Your data struct thats passed as an arg to event callback.
+// sender in EventArgs should be a pointer to the object that called the callback.
 struct TickEventArgs : public EventArgs
 {
     uint32_t seconds;
@@ -25,17 +27,18 @@ struct TickEventArgs : public EventArgs
     }
 };
 
+//Your useful class.
 class SecondsCounterClass
 {
 private:
     uint32_t seconds;
-    TickEventArgs args;
+    TickEventArgs args; //Argument thats passed to callback.
 public:
-    EventHandler onTick;
-    MultiFunctionEventHandler onTickMuli;
+    EventHandler onTick; //EventHandler
+    MultiFunctionEventHandler onTickMuli; //EventHandler
     SecondsCounterClass();
-    void timerSetup();
-    void tickISR();
+    void timerSetup(); //Sets up ISR for second counting.
+    void tickISR(); //Called by ISR, not user.
 };
 
 extern SecondsCounterClass SecondsCounter;
