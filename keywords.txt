@@ -1,0 +1,29 @@
+NDefs               	LITERAL1
+
+ULONG_MAX           	LITERAL1
+LONG_MAX            	LITERAL1
+LONG_MIN            	LITERAL1
+
+ZERO                	LITERAL1
+NEWLINE             	LITERAL1
+NULLTERMINATOR      	LITERAL1
+
+ULONG_MAX           	LITERAL1
+LONG_MAX            	LITERAL1
+LONG_MIN            	LITERAL1
+UINT_MAX            	LITERAL1
+INT_MAX             	LITERAL1
+INT_MIN             	LITERAL1
+BYTE_MAX            	LITERAL1
+
+ADC_MAX             	LITERAL1
+PWM_MAX             	LITERAL1
+
+AVR_RESET             	LITERAL1
+
+SERIALCOM_BAUD      	LITERAL1
+
+reinterpret_c_style 	LITERAL1
+addInterrupt        	LITERAL1
+removeInterrupt			LITERAL1
+isBetween   			LITERAL1
