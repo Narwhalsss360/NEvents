@@ -8,6 +8,7 @@
 #endif
 
 #include <NDefs.h>
+#include "EventArgs.h"
 #include "Callback.h"
 #include "Macros.h"
 
@@ -28,5 +29,7 @@ struct MultiFunctionEventHandler : public EventHandler
     void invoke(EventArgs *) override;
     virtual void operator+=(EVENT_FUNCTION_PTR());
 };
+
+typedef EventHandler event;
 
 #endif
