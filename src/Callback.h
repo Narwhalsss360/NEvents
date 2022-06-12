@@ -2,12 +2,13 @@
 #define Callback_h
 
 #include "EventArgs.h"
+#include "Macros.h"
 
 struct Callback
 {
-    void (*function)(EventArgs *);
+    EVENT_FUNCTION_PTR(function);
     Callback();
-    Callback(void (*function)(EventArgs *));
+    Callback(EVENT_FUNCTION_PTR(_function));
 };
 
 #endif

@@ -9,21 +9,22 @@
 
 #include <NDefs.h>
 #include "Callback.h"
+#include "Macros.h"
 
 struct EventHandler
 {
     Callback *callback;
     EventHandler();
-    virtual void addCallback(void (*)(EventArgs *));
+    virtual void addCallback(EVENT_FUNCTION_PTR());
     virtual void invoke(EventArgs *);
-    void operator+=(void (*)(EventArgs *));
+    void operator+=(EVENT_FUNCTION_PTR());
 };
 
 struct MultiFunctionEventHandler : public EventHandler
 {
     uint8_t callbackCount;
     MultiFunctionEventHandler();
-    void addCallback(void (*)(EventArgs *)) override;
+    void addCallback(EVENT_FUNCTION_PTR()) override;
     void invoke(EventArgs *) override;
 };
 

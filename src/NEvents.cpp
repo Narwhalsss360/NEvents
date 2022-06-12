@@ -5,17 +5,17 @@ EventHandler::EventHandler()
 {
 }
 
-virtual void EventHandler::addCallback(void (*function)(EventArgs *))
+void EventHandler::addCallback(EVENT_FUNCTION_PTR(function))
 {
     *callback = Callback(function);
 }
 
-virtual void EventHandler::invoke(EventArgs *args)
+void EventHandler::invoke(EventArgs *args)
 {
     callback->function(args);
 }
 
-void EventHandler::operator+=(void (*function)(EventArgs *))
+void EventHandler::operator+=(EVENT_FUNCTION_PTR(function))
 {
     addCallback(function);
 }
@@ -25,7 +25,7 @@ MultiFunctionEventHandler::MultiFunctionEventHandler()
 {
 }
 
-void MultiFunctionEventHandler::addCallback(void (*function)(EventArgs *)) override
+void MultiFunctionEventHandler::addCallback(EVENT_FUNCTION_PTR(function))
 {
     Callback *temp = (Callback *)malloc(sizeof(Callback) * (callbackCount + 1));
     memmove(temp, callback, sizeof(Callback) * callbackCount);
