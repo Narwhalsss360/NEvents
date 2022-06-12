@@ -128,7 +128,7 @@
   `YourClassName_ESR` | `TICK_ESR(name, args_name, defenition)`: Macro to make the creation
   and usage of a callback using your easier.
 
-  .cpp file:
+  .h file:
 
     #ifndef SecondsCounter_h
     #define SecondsCounter_h
@@ -177,7 +177,7 @@
 
     #endif
 
-  .h File:
+  .cpp File:
 
     #include "SecondsCounterExample.h"
 
