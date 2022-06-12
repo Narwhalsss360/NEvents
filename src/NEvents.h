@@ -10,7 +10,7 @@
 #include <NDefs.h>
 #include "EventArgs.h"
 #include "Callback.h"
-#include "Macros.h"
+#include "NEventsMacros.h"
 
 struct EventHandler
 {

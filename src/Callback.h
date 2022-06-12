@@ -8,7 +8,7 @@
 #endif
 
 #include "EventArgs.h"
-#include "Macros.h"
+#include "NEventsMacros.h"
 
 struct Callback
 {
