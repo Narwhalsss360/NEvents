@@ -2,11 +2,17 @@
 
 ## Files
   `Callback.h`: `struct Callback` declaration
+
   `Callback.cpp`: `struct Callback` defenition
+
   `EventArgs.h`: `struct EventArgs` declaration
+
   `EventArgs.cpp` `struct EventArgs` defention
+
   `NEvents.h`: `struct EventHandler` & `struct MultiFunctionEventHandler : public EventHandler` defenition
+
   `NEvents.cpp`: `struct EventHandler` & `struct MultiFunctionEventHandler : public EventHandler` declaration
+
   `SecondsCounterExample.h & .cpp`: Exmaple code for library creators.
 
 ## EventArgs
