@@ -10,7 +10,7 @@
 #include <NEvents.h>
 
 #define GET_TickEventArgs(arg) *(TickEventArgs*)arg
-#define TICK_ESR(name, args_name, defenition) void name(EventArgs *base_##args_name) {  TickEventArgs args_name = GET_TickEventArgs(base_##args_name); defenition }
+#define TICK_ESR(name, args_name, defenition)  EVENT_FUNCTION(name, base_##args_name) {  TickEventArgs args_name = GET_TickEventArgs(base_##args_name); defenition }
 
 struct TickEventArgs : public EventArgs
 {
