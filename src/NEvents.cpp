@@ -1,12 +1,13 @@
 #include "NEvents.h"
 
 EventHandler::EventHandler()
-    : callback((Callback *)malloc(sizeof(Callback)))
+    : callback(NULL)
 {
 }
 
 void EventHandler::addCallback(EVENT_FUNCTION_PTR(function))
 {
+    callback = (Callback *)malloc(sizeof(Callback));
     *callback = Callback(function);
 }
 
