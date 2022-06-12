@@ -12,6 +12,10 @@
 #include "Callback.h"
 #include "NEventsMacros.h"
 
+#define NEVENTS_MAJOR_VERSION 1
+#define NEVENTS_MINOR_VERSION 0
+#define NEVENTS_PATCH_VERSION 1
+
 struct EventHandler
 {
     Callback *callback;
