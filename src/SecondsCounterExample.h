@@ -9,15 +9,17 @@
 
 #include <NEvents.h>
 
+#define GET_TickEventArgs(arg) *(TickEventArgs*)arg
+
 struct TickEventArgs : public EventArgs
 {
-    uint32_t time;
+    uint32_t seconds;
     TickEventArgs()
-        : EventArgs(), time(0)
+        : EventArgs(), seconds(0)
     {
     }
     TickEventArgs(void *_sender, uint32_t _time)
-        : EventArgs(_sender), time(_time)
+        : EventArgs(_sender), seconds(_time)
     {
     }
 };
@@ -29,32 +31,10 @@ private:
     TickEventArgs args;
 public:
     EventHandler onTick;
-    SecondsCounterClass() //Setting up ISR
-        : seconds(0)
-    {
-        TCCR1A = ZERO;
-
-        TCCR1B &= ~(1 << WGM13);
-        TCCR1B |= (1 << WGM12);
-
-        TCCR1B |= (1 << CS12);
-        TCCR1B &= ~(1 << CS11);
-        TCCR1B &= ~(1 << CS10);
-
-        TCCR1A |= (1 << COM1A1) | (1 << COM1B1);
-
-        TCNT1 = ZERO;
-        OCR1A = 62500;
-        TIMSK1 = (1 << OCIE1A);
-        args.sender = this;
-    }
-
-    void tickISR()
-    {
-        seconds++;
-        args.time = seconds;
-        onTick.invoke(&args);
-    }
+    MultiFunctionEventHandler onTickMuli;
+    SecondsCounterClass();
+    void timerSetup();
+    void tickISR();
 };
 
 extern SecondsCounterClass SecondsCounter;
