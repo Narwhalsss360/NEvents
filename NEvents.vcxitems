@@ -19,8 +19,15 @@
   </ItemGroup>
   <ItemGroup>
     <!-- <ClInclude Include="$(MSBuildThisFileDirectory)NEvents.h" /> -->
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Callback.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\EventArgs.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\NEventsMacros.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\SecondsCounterExample.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Callback.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\EventArgs.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\NEvents.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\SecondsCounterExample.cpp" />
   </ItemGroup>
 </Project>
