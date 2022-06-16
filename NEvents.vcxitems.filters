@@ -9,6 +9,12 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx</Extensions>
     </Filter>
+    <Filter Include="Library metadata">
+      <UniqueIdentifier>{133a8e81-5a0f-41dd-9617-a2d7af7936c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Examples">
+      <UniqueIdentifier>{17392167-28e4-4df1-8eb3-1fd2c8cdb842}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)src\NEvents.cpp">
@@ -20,14 +26,16 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)src\EventArgs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)src\SecondsCounterExample.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="$(MSBuildThisFileDirectory)library.properties" />
     <Text Include="$(MSBuildThisFileDirectory)src\NEvents.h">
       <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="$(MSBuildThisFileDirectory)library.properties">
+      <Filter>Library metadata</Filter>
+    </Text>
+    <Text Include="$(MSBuildThisFileDirectory)keywords.txt">
+      <Filter>Library metadata</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
@@ -40,8 +48,13 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)src\NEventsMacros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)src\SecondsCounterExample.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)README.md">
+      <Filter>Library metadata</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)examples\ExampleClass\ExampleClass.ino">
+      <Filter>Examples</Filter>
+    </None>
   </ItemGroup>
 </Project>

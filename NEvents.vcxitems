@@ -14,6 +14,7 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)keywords.txt" />
     <Text Include="$(MSBuildThisFileDirectory)library.properties" />
     <Text Include="$(MSBuildThisFileDirectory)src\NEvents.h" />
   </ItemGroup>
@@ -22,12 +23,14 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Callback.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\EventArgs.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\NEventsMacros.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)src\SecondsCounterExample.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Callback.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\EventArgs.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\NEvents.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)src\SecondsCounterExample.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)examples\ExampleClass\ExampleClass.ino" />
+    <None Include="$(MSBuildThisFileDirectory)README.md" />
   </ItemGroup>
 </Project>
