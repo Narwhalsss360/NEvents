@@ -25,7 +25,8 @@ public:
 private:
 	void invoke(any_ptr pointer = nullptr)
 	{
-		callable->invoke(pointer);
+		if (callable)
+			callable->invoke(pointer);
 	}
 
 	void operator()(any_ptr pointer = nullptr)
