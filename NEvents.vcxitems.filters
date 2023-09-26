@@ -28,7 +28,7 @@
     <None Include="$(MSBuildThisFileDirectory)README.md">
       <Filter>Library metadata</Filter>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)examples\ExampleClass\ExampleClass.ino">
+    <None Include="$(MSBuildThisFileDirectory)examples\ExampleClass\ExampleReader.ino">
       <Filter>Examples</Filter>
     </None>
   </ItemGroup>

@@ -18,7 +18,7 @@
     <Text Include="$(MSBuildThisFileDirectory)library.properties" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)examples\ExampleClass\ExampleClass.ino" />
+    <None Include="$(MSBuildThisFileDirectory)examples\ExampleClass\ExampleReader.ino" />
     <None Include="$(MSBuildThisFileDirectory)README.md" />
   </ItemGroup>
   <ItemGroup>
