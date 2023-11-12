@@ -12,6 +12,8 @@ public:
     {
     }
     
+    /// @brief Adds an invokable to the event handler list.
+    /// @param handler handler to add
     void addHandler(Invokable<void, Args...>* handler)
     {
         if (handlers == nullptr)
@@ -36,11 +38,15 @@ public:
         handlers = newAllocation;
     }
 
+    /// @brief Adds an invokable to the event handler list.
+    /// @param handler handler to add
     void addHandler(Invokable<void, Args...>& handler)
     {
         addHandler(&handler);
     }
 
+    /// @brief Removes the handler from the event handler list.
+    /// @param handler handler to remove
     void removeHandler(Invokable<void, Args...>* handler)
     {
         int16_t index = -1;
@@ -71,6 +77,8 @@ public:
         handlers = newAllocation;
     }
 
+    /// @brief Removes the handler from the event handler list.
+    /// @param handler handler to remove
     void removeHandler(Invokable<void, Args...>& handler)
     {
         removeHandler(&handler);
@@ -116,6 +124,8 @@ public:
 private:
     friend Sender;
 
+    /// @brief Invoke handlers.
+    /// @param ...args args
     void invoke(Args... args)
     {
         for (uint8_t i = 0; i < count; i++)
