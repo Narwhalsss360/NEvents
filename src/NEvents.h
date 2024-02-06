@@ -3,6 +3,15 @@
 
 #include <Callables.h>
 
+/// @brief Non-standard base class for event args
+class EventArgs
+{
+public:
+    EventArgs(void* context = nullptr)
+
+    void* context;
+};
+
 template <typename Sender, typename... Args>
 class Event
 {
