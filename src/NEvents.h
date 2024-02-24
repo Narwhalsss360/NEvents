@@ -7,7 +7,7 @@
 class EventArgs
 {
 public:
-    EventArgs(void* context = nullptr)
+    EventArgs(void* context = nullptr);
 
     void* context;
 };
