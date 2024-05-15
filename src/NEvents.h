@@ -139,14 +139,14 @@ private:
 
     /// @brief Invoke handlers.
     /// @param ...args args
-    void invoke(Args... args)
+    void invoke(Args... args) const
     {
         for (uint8_t i = 0; i < count; i++)
             if (handlers[i]->valid())
                 handlers[i]->invoke(args...);
     }
 
-    void operator()(Args... args)
+    void operator()(Args... args) const
     {
         invoke(args...);
     }
