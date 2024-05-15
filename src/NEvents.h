@@ -25,6 +25,10 @@ public:
     /// @param handler handler to add
     void addHandler(Invokable<void, Args...>* handler)
     {
+        if (handler == nullptr) {
+            return;
+        }
+
         if (handlers == nullptr)
         {
             handlers = new Invokable<void, Args...>*[1];
