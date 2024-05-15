@@ -146,7 +146,17 @@ private:
                 handlers[i]->invoke(args...);
     }
 
+    void invoke(Args... args)
+    {
+        ((const Event<Sender, Args...>*)this)->invoke(args...);
+    }
+
     void operator()(Args... args) const
+    {
+        invoke(args...);
+    }
+
+    void operator()(Args... args)
     {
         invoke(args...);
     }
