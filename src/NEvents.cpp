@@ -4,3 +4,4 @@ EventArgs::EventArgs(void* context)
     : context(context)
 {
 }
+
